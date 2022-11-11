@@ -31,13 +31,15 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
           http
                   .csrf().disable()
-                    .authorizeRequests()
+                  .authorizeRequests()
                   .antMatchers("/", "index", "/css/*", "/js/*").permitAll()
-                    .antMatchers("/api/**").hasRole(STUDENT.name())
-                    .anyRequest()
-                    .authenticated()
-                    .and()
-                    .httpBasic();
+                  .antMatchers("/api/**").hasRole(STUDENT.name())
+                  .anyRequest()
+                  .authenticated()
+                  .and()
+                  .formLogin()
+                    .loginPage("/login").permitAll()
+                    .defaultSuccessUrl("/courses", true);
     }
 
     @Override
