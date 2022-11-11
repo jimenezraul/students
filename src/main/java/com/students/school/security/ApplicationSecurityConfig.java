@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.students.school.security.ApplicationUserRole.*;
 
 @Configuration
@@ -30,16 +32,19 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
           http
-                  .csrf().disable()
-                  .authorizeRequests()
-                  .antMatchers("/", "index", "/css/*", "/js/*").permitAll()
-                  .antMatchers("/api/**").hasRole(STUDENT.name())
-                  .anyRequest()
-                  .authenticated()
-                  .and()
-                  .formLogin()
+                    .csrf().disable()
+                    .authorizeRequests()
+                    .antMatchers("/", "index", "/css/*", "/js/*").permitAll()
+                    .antMatchers("/api/**").hasRole(STUDENT.name())
+                    .anyRequest()
+                    .authenticated()
+                    .and()
+                    .formLogin()
                     .loginPage("/login").permitAll()
-                    .defaultSuccessUrl("/courses", true);
+                    .defaultSuccessUrl("/courses", true)
+                    .and()
+                    .rememberMe().tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21))
+                    .key("somethingverysecured");
     }
 
     @Override
