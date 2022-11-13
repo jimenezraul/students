@@ -3,11 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Cources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1>Cources</h1>
-<p>Some content</p>
-<a href="/logout">Logout</a>
-
+<body class=" bg-slate-400 h-screen">
+<div class="h-full container mx-auto">
+    <div class="flex flex-col flex-1 h-full">
+        <div class="my-2 w-full">
+            <div class="w-full flex justify-end">
+                <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                   href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="w-full">
+            <div class="bg-slate-100 shadow-lg rounded-lg p-6 w-full flex flex-col items-center justify-center">
+                <div class="panel-heading mb-3">
+                    <h3 class="font-bold text-xl">Courses</h3>
+                </div>
+                <div class="panel-body
+                ">
+                    <table class="table-auto">
+                        <thead>
+                        <tr>
+                            <th class="px-4 py-2">Course Name</th>
+                            <th class="px-4 py-2">Course Description</th>
+                            <th class="px-4 py-2">Course Duration</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Java</td>
+                            <td class="border px-4 py-2">Java is a programming language and computing platform first
+                                released by Sun Microsystems in 1995. There are lots of applications and websites that
+                                will not work unless you have Java installed, and more are created every day. Java is
+                                fast, secure, and reliable. From laptops to datacenters, game consoles to scientific
+                                supercomputers, cell phones to the Internet, Java is everywhere!
+                            </td>
+                            <td class="border px-4 py-2">3 months</td>
+                        </tr>
+                        <tr class="bg-slate-200">
+                            <td class="border px-4 py-2">Python</td>
+                            <td class="border px-4 py-2">Python is a programming language that lets you work quickly and
+                                integrate systems more effectively. You can learn to use Python and see almost immediate
+                                gains in productivity and lower maintenance costs. Python runs on Windows, Linux/Unix,
+                                Mac OS X, and has been ported to Java and .NET virtual machines.
+                            </td>
+                            <td class="border px-4 py-2">2 months</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">JavaScript</td>
+                            <td class="border px-4 py-2">JavaScript is a scripting or programming language that allows
+                                you to implement complex features on web pages — every time a web page does more than
+                                just sit there and display static information for you to look at — displaying timely
+                                content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes,
+                                etc. — you can bet that JavaScript is probably involved.
+                            </td>
+                            <td class="border px-4 py-2">1 month</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

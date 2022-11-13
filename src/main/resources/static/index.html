@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
-<h1>Home Page</h1>
-<p>Some content</p>
+<body class="bg-slate-400 h-screen">
+<div class="h-full container mx-auto">
+    <div class="flex flex-1 justify-center items-center h-full">
+        <div class="w-full flex flex-col items-center justify-center">
+            <h1 class="mb-3 text-4xl text-center font-bold">Welcome to the Spring Security Demo</h1>
+            <div class="bg-slate-100 max-w-md shadow-lg rounded-lg p-6 w-full flex flex-col items-center justify-center">
+                <div class="panel-heading mb-3">
+                    <h3 class="font-bold text-xl">Login</h3>
+                </div>
+                <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>To login</p>
-<a href="/login">Login</a>
 
 </body>
 </html>
